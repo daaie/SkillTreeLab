@@ -1,0 +1,10 @@
+[Win32 Setup]
+visual C++ -> Win32 -> Win32프로젝트 
+비주얼 어시스트 깔면쉽당..
+
+[컨퍼런스]
+gdc 
+ndc
+unite
+시그라프
+언리얼서밋
