@@ -1,0 +1,6 @@
+﻿C:\Users\stl\Documents\workspace_directX\Day07\Engine_Day5_End\Engine20_CubeMap\PixelShader.fx(27,9-66): warning X3206: implicit truncation of vector type
+C:\Users\stl\Documents\workspace_directX\Day07\Engine_Day5_End\Engine20_CubeMap\PixelShader.fx(42,9-56): warning X3206: implicit truncation of vector type
+  
+  compilation object save succeeded; see C:\Users\stl\Documents\workspace_directX\Day07\Engine_Day5_End\Debug\PixelShader.cso
+  Engine20_CubeMap.vcxproj -> C:\Users\stl\Documents\workspace_directX\Day07\Engine_Day5_End\Debug\Engine20_CubeMap.exe
+  Engine20_CubeMap.vcxproj -> C:\Users\stl\Documents\workspace_directX\Day07\Engine_Day5_End\Debug\Engine20_CubeMap.pdb (Partial PDB)
