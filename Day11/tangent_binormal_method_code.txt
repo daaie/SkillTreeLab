@@ -1,0 +1,115 @@
+XMFLOAT3 DXApp::ReadTangent(FbxMesh * pMesh, int vertexIndex, int vertexCounter)
+{
+	// UV가 있는지 확인.
+	if (pMesh->GetElementTangentCount() < 1)
+	{
+		MessageBox(NULL, L"Tangent 값이 유효하지 않습니다", L"오류", MB_OK);
+		return NULL;
+	}
+
+	// 리턴용 변수 선언.
+	XMFLOAT3 tangent(0.0f, 0.0f, 0.0f);
+	// UV 전체 배열 얻어오기.
+	FbxGeometryElementTangent* vertexTangent = pMesh->GetElementTangent(0);
+	const bool isUsingIndex = vertexTangent->GetReferenceMode() != FbxGeometryElement::eDirect;
+	const int indexCount = isUsingIndex ? vertexTangent->GetIndexArray().GetCount() : 0;
+
+	switch (vertexTangent->GetMappingMode())
+	{
+		// UV 속성이 제어점 유형인 경우.
+	case FbxGeometryElement::eByControlPoint:
+	{
+		// 현재 UV 값을 읽어올 인덱스 얻어오기.
+		int index = isUsingIndex ? vertexTangent->GetIndexArray().GetAt(vertexIndex) : vertexIndex;
+
+		// UV 값 읽어오기. (DirectX와 FBX의 UV V좌표는 서로 반대).
+		tangent.x = (float)vertexTangent->GetDirectArray().GetAt(index).mData[0];
+		tangent.y = (float)vertexTangent->GetDirectArray().GetAt(index).mData[1];
+		tangent.z = (float)vertexTangent->GetDirectArray().GetAt(index).mData[2];
+
+		// UV 값 반환.
+		return tangent;
+	}
+
+	// UV 속성이 정점 유형인 경우.
+	case FbxGeometryElement::eByPolygonVertex:
+	{
+		// 현재 UV 값을 읽어올 인덱스 얻어오기. 삼항연산자.
+		int index = isUsingIndex == true ? vertexTangent->GetIndexArray().GetAt(vertexCounter) : vertexCounter;
+
+		// UV 값 읽어오기. (DirectX와 FBX의 UV V좌표는 서로 반대).
+		tangent.x = (float)vertexTangent->GetDirectArray().GetAt(index).mData[0];
+		tangent.y = (float)vertexTangent->GetDirectArray().GetAt(index).mData[1];
+		tangent.z = (float)vertexTangent->GetDirectArray().GetAt(index).mData[2];
+
+		// UV 값 반환.
+		return tangent;
+	}
+
+	default:
+	{
+		MessageBox(NULL, L"Tangent 값이 유효하지 않습니다", L"오류", MB_OK);
+		return NULL;
+	}
+	}
+
+	return NULL;
+}
+
+XMFLOAT3 DXApp::ReadBinormal(FbxMesh * pMesh, int vertexIndex, int vertexCounter)
+{
+	// UV가 있는지 확인.
+	if (pMesh->GetElementBinormalCount() < 1)
+	{
+		MessageBox(NULL, L"Binormal 값이 유효하지 않습니다", L"오류", MB_OK);
+		return NULL;
+	}
+
+	// 리턴용 변수 선언.
+	XMFLOAT3 binormal(0.0f, 0.0f, 0.0f);
+	// UV 전체 배열 얻어오기.
+	FbxGeometryElementBinormal* vertexBinormal = pMesh->GetElementBinormal(0);
+	const bool isUsingIndex = vertexBinormal->GetReferenceMode() != FbxGeometryElement::eDirect;
+	const int indexCount = isUsingIndex ? vertexBinormal->GetIndexArray().GetCount() : 0;
+
+	switch (vertexBinormal->GetMappingMode())
+	{
+		// UV 속성이 제어점 유형인 경우.
+	case FbxGeometryElement::eByControlPoint:
+	{
+		// 현재 UV 값을 읽어올 인덱스 얻어오기.
+		int index = isUsingIndex ? vertexBinormal->GetIndexArray().GetAt(vertexIndex) : vertexIndex;
+
+		// UV 값 읽어오기. (DirectX와 FBX의 UV V좌표는 서로 반대).
+		binormal.x = (float)vertexBinormal->GetDirectArray().GetAt(index).mData[0];
+		binormal.y = (float)vertexBinormal->GetDirectArray().GetAt(index).mData[1];
+		binormal.z = (float)vertexBinormal->GetDirectArray().GetAt(index).mData[2];
+
+		// UV 값 반환.
+		return binormal;
+	}
+
+	// UV 속성이 정점 유형인 경우.
+	case FbxGeometryElement::eByPolygonVertex:
+	{
+		// 현재 UV 값을 읽어올 인덱스 얻어오기. 삼항연산자.
+		int index = isUsingIndex == true ? vertexBinormal->GetIndexArray().GetAt(vertexCounter) : vertexCounter;
+
+		// UV 값 읽어오기. (DirectX와 FBX의 UV V좌표는 서로 반대).
+		binormal.x = (float)vertexBinormal->GetDirectArray().GetAt(index).mData[0];
+		binormal.y = (float)vertexBinormal->GetDirectArray().GetAt(index).mData[1];
+		binormal.z = (float)vertexBinormal->GetDirectArray().GetAt(index).mData[2];
+
+		// UV 값 반환.
+		return binormal;
+	}
+
+	default:
+	{
+		MessageBox(NULL, L"Binormal 값이 유효하지 않습니다", L"오류", MB_OK);
+		return NULL;
+	}
+	}
+
+	return NULL;
+}

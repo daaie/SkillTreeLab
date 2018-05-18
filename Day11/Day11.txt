@@ -1,0 +1,11 @@
+[ai]
+블랙보드bb - 비해비어트리bt
+-> 얘내는 컨트롤러 aicontroller 가 관리함 
+
+selector / sequence 
+셀렉터는 반환이 성공이어야 다음꺼실행
+시퀀스는 반대
+
+
+[behavier target task]
+bt에서 새태스크
