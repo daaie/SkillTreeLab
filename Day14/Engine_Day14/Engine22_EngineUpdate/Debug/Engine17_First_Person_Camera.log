@@ -1,0 +1,4 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Engine05_IndexBuffer.vcxproj, Engine06_WVP.vcxproj, Engine07_Transform.vcxproj, Engine08_Texture.vcxproj, Engine09_RenderState.vcxproj, Engine10_BlendState.vcxproj, Engine11_Diffuse.vcxproj, Engine12_Specular.vcxproj, Engine13_GameTimer.vcxproj, Engine14_FBXLoader.vcxproj, Engine15_Depth_Stencil.vcxproj, Engine16_Direct Input.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  compilation object save succeeded; see C:\STL\DirectX_Lecture\LectureProjects\Engine_Day4\Debug\PixelShader.cso
+  Engine17_First_Person_Camera.vcxproj -> C:\STL\DirectX_Lecture\LectureProjects\Engine_Day4\Debug\Engine17_First_Person_Camera.exe
+  Engine17_First_Person_Camera.vcxproj -> C:\STL\DirectX_Lecture\LectureProjects\Engine_Day4\Debug\Engine17_First_Person_Camera.pdb (Partial PDB)

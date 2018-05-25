@@ -1,0 +1,4 @@
+﻿C:\STL\DirectX_Lecture\LectureProjects\Engine_Day14\Engine23_ToonShading\Shaders\CubeMapPS.fx(57,19-51): warning X3206: implicit truncation of vector type
+C:\STL\DirectX_Lecture\LectureProjects\Engine_Day14\Engine23_ToonShading\Shaders\CubeMapPS.fx(18,29-39): error X4502: invalid vs_2_0 output semantic 'SV_TARGET'
+  
+  compilation failed; no code produced

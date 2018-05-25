@@ -1,0 +1,51 @@
+C++ 엔진  -> 블루프린트 클래스가 상속받아 -> 엑터를 생성 ( 객체가 메모리에 올라간것)
+
+브루프린트는 아래 클래스,,C++을 상속받으니까 C++다쓸수있음
+
+[a02프로젝트]
+
+Class ABP_P38Actor : public AActor
+{
+	UFUNCTION(BlueprintCallable,client);
+
+	virtual void BeginPlay() override;
+
+	UPOPERTY(EditAnyWhere,);
+
+	class USTaticMeshComponent* Body;
+	class USTaticMeshComponent* Left;
+	class USTaticMeshComponent* Right;
+}
+
+ABP_P38Actor::ABP_P38Actor()
+{
+	Body=CreaateDefaultSubobject<UStaticMeshComponent>(TEXT("Body"));
+}
+
+ABP_P38Actor::BeginPlay()
+{
+	int i=0;
+	for(i=0;i<100;i++)
+	{
+		
+	}
+}
+
+void Tick()
+{
+	Left->AddLocalRotation();
+}
+void RotatePropeller(UStaticMeshCompnent *RotateComponent)
+{
+}
+[블루프린트 풀 에디터에서 왼쪽 컴포넌트]
+
+씬 컴포넌트는 루트 컴포턴트를 대신할수잇다
+루트 컴포넌트는 비워져있고
+씬 컴포넌트는 스케일값뺴고 비어있당ㅋㅋㅋ그래서 대신하는거임
+
+HLSL??
+
+물체하나당에 텍스쳐 끼우고 텍스처는 머티리얼에서 가져옴 -> 물체하나당 머티리얼하나
+
+Addlocaloffset
