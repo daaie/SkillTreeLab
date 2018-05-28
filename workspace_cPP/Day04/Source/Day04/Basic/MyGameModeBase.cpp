@@ -12,14 +12,14 @@ AMyGameModeBase::AMyGameModeBase()
 	//DefaultPawnClass = AMyCharacter::StaticClass();
 
 	static ConstructorHelpers::FClassFinder<AMyPlayerController>PC_Class(
-		TEXT("Blueprint'/Game/Blueprints/BP_Controller.BP_Controller_C'"));
+		TEXT("Blueprint'/Game/Blueprints/MyCharacter/BP_Controller.BP_Controller_C'"));
 	if (PC_Class.Succeeded())
 	{
 		PlayerControllerClass = PC_Class.Class;
 
 	}
 	static ConstructorHelpers::FClassFinder<AMyCharacter>Pawn_Class(
-		TEXT("Blueprint'/Game/Blueprints/BP_Character.BP_Character_C'"));
+		TEXT("Blueprint'/Game/Blueprints/MyCharacter/BP_Character.BP_Character_C'"));
 	if (Pawn_Class.Succeeded())
 	{
 		DefaultPawnClass = Pawn_Class.Class;

@@ -491,6 +491,6 @@ void AMyCharacter::OnShot()
 
 	if(bIsFire)
 	{
-		GetWorldTimerManager().SetTimer(TimerHandle, this, &AMyCharacter::OnShot, 0.2f);
+		GetWorldTimerManager().SetTimer(TimerHandle, this, &AMyCharacter::OnShot, 0.1f);
 	}
 }
