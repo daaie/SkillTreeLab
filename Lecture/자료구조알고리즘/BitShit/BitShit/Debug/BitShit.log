@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\stl\lecture\bitshit\bitshit\main.cpp(51): warning C4018: '<': signed/unsigned mismatch
+  BitShit.vcxproj -> C:\STL\Lecture\BitShit\Debug\BitShit.exe
+  BitShit.vcxproj -> C:\STL\Lecture\BitShit\Debug\BitShit.pdb (Full PDB)

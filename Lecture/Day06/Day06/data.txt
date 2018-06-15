@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "List.h"
+#include <list>
+
+using namespace junios;
+
+class Line
+{
+public:
+	char data[81];
+};
+
+
+int main()
+{
+	List<Line> T;
+
+	char buffer[1024] = { 0 };
+
+	FILE* fp = fopen("data.txt", "r");
+
+	fgets(buffer, sizeof(80), fp);
+	Line Temp;
+	memcpy(Temp.data, buffer, 80);
+
+	T.PushBack(Temp);
+	
+	fclose(fp);
+
+	return 0;
+}
+
+

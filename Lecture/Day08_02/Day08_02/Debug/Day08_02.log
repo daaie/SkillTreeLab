@@ -1,0 +1,145 @@
+﻿  main.cpp
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(46): error C2039: 'Length': 'std::stack<char *,std::deque<_Ty,std::allocator<_Ty>>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=char *
+          ]
+  \\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(11): note: 'std::stack<char *,std::deque<_Ty,std::allocator<_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=char *
+          ]
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(48): error C2039: 'Push': 'std::stack<char *,std::deque<_Ty,std::allocator<_Ty>>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=char *
+          ]
+  \\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(11): note: 'std::stack<char *,std::deque<_Ty,std::allocator<_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=char *
+          ]
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(52): error C2039: 'Peek': 'std::stack<char *,std::deque<_Ty,std::allocator<_Ty>>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=char *
+          ]
+  \\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(11): note: 'std::stack<char *,std::deque<_Ty,std::allocator<_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=char *
+          ]
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(54): error C2039: 'Length': 'std::stack<char *,std::deque<_Ty,std::allocator<_Ty>>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=char *
+          ]
+  \\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(11): note: 'std::stack<char *,std::deque<_Ty,std::allocator<_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=char *
+          ]
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(56): error C2039: 'Pop': 'std::stack<char *,std::deque<_Ty,std::allocator<_Ty>>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=char *
+          ]
+  \\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(11): note: 'std::stack<char *,std::deque<_Ty,std::allocator<_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=char *
+          ]
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(65): error C2039: 'Length': 'std::stack<char *,std::deque<_Ty,std::allocator<_Ty>>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=char *
+          ]
+  \\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(11): note: 'std::stack<char *,std::deque<_Ty,std::allocator<_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=char *
+          ]
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(67): error C2039: 'Peek': 'std::stack<char *,std::deque<_Ty,std::allocator<_Ty>>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=char *
+          ]
+  \\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(11): note: 'std::stack<char *,std::deque<_Ty,std::allocator<_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=char *
+          ]
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(73): error C2039: 'Push': 'std::stack<char *,std::deque<_Ty,std::allocator<_Ty>>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=char *
+          ]
+  \\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(11): note: 'std::stack<char *,std::deque<_Ty,std::allocator<_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=char *
+          ]
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(82): error C2039: 'Init': 'std::stack<char *,std::deque<_Ty,std::allocator<_Ty>>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=char *
+          ]
+  \\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(11): note: 'std::stack<char *,std::deque<_Ty,std::allocator<_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=char *
+          ]
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(113): error C2039: 'Length': 'std::stack<char *,std::deque<_Ty,std::allocator<_Ty>>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=char *
+          ]
+  \\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(11): note: 'std::stack<char *,std::deque<_Ty,std::allocator<_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=char *
+          ]
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(115): error C2039: 'Pop': 'std::stack<char *,std::deque<_Ty,std::allocator<_Ty>>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=char *
+          ]
+  \\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(11): note: 'std::stack<char *,std::deque<_Ty,std::allocator<_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=char *
+          ]
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(90): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: 'strtok' 선언을 참조하십시오.
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(96): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(109): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: 'strtok' 선언을 참조하십시오.
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(122): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(129): error C2065: 'AStack': 선언되지 않은 식별자입니다.
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(129): error C2062: 예기치 않은 'char' 형식입니다.
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(130): error C2065: 'PostFixCal': 선언되지 않은 식별자입니다.
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(130): error C2228: '.Init' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  \\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(130): note: 'unknown-type' 형식입니다.
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(138): error C2065: 'PostFixCal': 선언되지 않은 식별자입니다.
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(138): error C2228: '.Push' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  \\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(138): note: 'unknown-type' 형식입니다.
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(142): error C2065: 'PostFixCal': 선언되지 않은 식별자입니다.
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(142): error C2228: '.Pop' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  \\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(142): note: 'unknown-type' 형식입니다.
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(143): error C2065: 'PostFixCal': 선언되지 않은 식별자입니다.
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(143): error C2228: '.Pop' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  \\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(143): note: 'unknown-type' 형식입니다.
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(165): error C2065: 'PostFixCal': 선언되지 않은 식별자입니다.
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(165): error C2228: '.Push' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  \\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(165): note: 'unknown-type' 형식입니다.
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(177): error C2065: 'PostFixCal': 선언되지 않은 식별자입니다.
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(177): error C2228: '.Pop' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  \\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(177): note: 'unknown-type' 형식입니다.
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(133): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: 'strtok' 선언을 참조하십시오.
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(164): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+\\192.168.0.200\stl\lecture\day08_02\day08_02\main.cpp(173): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: 'strtok' 선언을 참조하십시오.
