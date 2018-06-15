@@ -62,9 +62,62 @@ name char(40) not null,
 PRIMARY KEY(idx)
 );
 
+create table inventory2(
+idx int not null auto_increment,
+user_id int not null,
+name char(40) not null,
+PRIMARY KEY(idx)
+) engine = MyISAM;
+읽기 위주 요청에 높은 성능 테이블 단위로 locking (트랜잭션 안됨)
+
+create table inventory3(
+idx int not null auto_increment,
+user_id int not null,
+name char(40) not null,
+PRIMARY KEY(idx)
+) engine = InnoDB;
+
+create table inventory4(
+idx int not null auto_increment,
+user_id int not null,
+name char(40) not null,
+PRIMARY KEY(idx)
+) engine =MEMORY;
+
 insert into inventory (user_idx, name) values ('1',	'안경');
 insert into inventory (user_idx, name) values ('3',	'망치');
 insert into inventory (user_idx, name) values ('4',	'담배');
 insert into inventory (user_idx, name) values ('4',	'라이터');
 insert into inventory (user_idx, name) values ('2',	'재떨이');
 insert into inventory (user_idx, name) values ('3',	'핸드폰');
+
+
+//-----------------------------------------
+alter table user add index myindex(id);
+show index from user;
+alter table user drop index myindex;
+
+프라이머리키 - 인덱스처럼?
+//---------------------------------------------
+
+백업
+mysqldump -uroot -p pjtank > C:\1111.sql
+디비생성
+create database pjtank2
+복원
+mysql -uroot -p -Dpjtank2 < C:\1111.sql
+
+//------------------------------------
+
+DELIMITER $$
+begin
+declare i int default 1;
+while i<=4 do
+update user a, 
+(select password from user where idx = @i) b 
+set a.password = sha(b.password)
+where a.idx = @i;
+set @i = @i+1;
+end while;
+end$$
+DELIMITER $$

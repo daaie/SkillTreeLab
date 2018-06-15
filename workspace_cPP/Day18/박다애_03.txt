@@ -1,0 +1,46 @@
+[암호화]
+update user set password = sha('1234') where idx = 1;
+select * from user where password = sha('1234');
+update user set password = sha2('1018', 1024) where idx = 4;
+
+[컬럼 변경]
+alter table user modify column password varchar(224) not null;
+alter table user add column note varchar(100);
+alter table user drop column note;
+alter table user change column id user_id varchar(100) not null;
+
+[인덱스]
+alter table user add index myindex(id);
+show index from user;
+alter table user drop index myindex;
+
+[실행 계획]
+explain user
+explain select * from user where user_id = 'nene';
+
+[삭제]
+truncate user;
+drop table user;
+
+[데이터]
+show variables like 'datadir';
+
+create table inventory2(
+idx int not null auto_increment,
+user_id int not null,
+name char(40) not null,
+PRIMARY KEY(idx)
+) engine = MyISAM;
+
+[백업 및 복원]
+mysqldump -uroot -p pjtank > C:\1111.sql
+create database pjtank2
+mysql -uroot -p -Dpjtank2 < C:\1111.sql
+
+
+
+
+
+
+
+
