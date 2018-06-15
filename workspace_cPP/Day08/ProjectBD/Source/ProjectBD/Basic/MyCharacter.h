@@ -135,6 +135,9 @@ public:
 	class UParticleSystem* HitEffect;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Effect")
+	class UParticleSystem* BloodEffect;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Effect")
 	class USoundBase* ExplosionSound;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Effect")
@@ -143,4 +146,15 @@ public:
 	FTimerHandle ShootTimeHandle;
 
 	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
+
+	TArray<class AMasterItem*> CanPickupList;
+
+	UFUNCTION(BlueprintCallable)
+	void PickUpItemList(class AMasterItem *Item);
+
+	UFUNCTION(BlueprintCallable)
+	void RemovePickUpItemList(class AMasterItem *Item);
+
+	void ViewItemTooltip();
+
 };

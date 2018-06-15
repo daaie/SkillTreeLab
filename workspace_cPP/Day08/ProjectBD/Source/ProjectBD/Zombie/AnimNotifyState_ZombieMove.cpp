@@ -23,7 +23,7 @@ void UAnimNotifyState_ZombieMove::Received_NotifyBegin(USkeletalMeshComponent * 
 	AZombieCharacter* Pawn = Cast<AZombieCharacter>(MeshComp->GetOwner());
 	if (Pawn)
 	{
-		Pawn->GetCharacterMovement()->MaxWalkSpeed = 3.0f;
+		Pawn->GetCharacterMovement()->MaxWalkSpeed = Pawn->WalkSpeed;
 	}
 }
 
@@ -34,6 +34,10 @@ void UAnimNotifyState_ZombieMove::Received_NotifyEnd(USkeletalMeshComponent * Me
 	AZombieCharacter* Pawn = Cast<AZombieCharacter>(MeshComp->GetOwner());
 	if (Pawn)
 	{
-		Pawn->GetCharacterMovement()->MaxWalkSpeed = Pawn->WalkSpeed;
+		if (Pawn->CurrentState == EZombieState::NORMAL)
+		{
+			//츄적상태에서도 속도가 3이됨
+			Pawn->GetCharacterMovement()->MaxWalkSpeed = 3.0f;
+		}
 	}
 }

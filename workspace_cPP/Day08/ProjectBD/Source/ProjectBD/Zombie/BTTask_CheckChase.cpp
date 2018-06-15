@@ -25,6 +25,7 @@ EBTNodeResult::Type UBTTask_CheckChase::ExecuteTask(UBehaviorTreeComponent& Owne
 	ObjectTypes.Add(UEngineTypes::ConvertToObjectType(ECollisionChannel::ECC_WorldDynamic));
 
 	IgnoreObjects.Add(Player);
+	//AActor* Item = Cast<AActor>
 
 	bool Result = UKismetSystemLibrary::LineTraceSingleForObjects(GetWorld(),
 		TraceStart,

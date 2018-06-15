@@ -14,6 +14,7 @@ enum class EZombieState : uint8
 	BATTLE	UMETA(Display = "Battle"),
 	DEAD	UMETA(Display = "Dead"),
 	CHASE	UMETA(Display = "Chase"),
+	HIT		UMETA(Display = "Hit"),
 };
 
 UENUM(BlueprintType)
@@ -66,6 +67,9 @@ public:
 		EZombieState CurrentState;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
+		EZombieState TempState;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
 		EZombieAnimState CurrentAnimState;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
@@ -83,6 +87,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Info")
 		class UWidgetComponent* Widget;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Effect")
+		class UParticleSystem* BulletEffect;
 
 	UFUNCTION()
 		void OnSeePawn(APawn * Pawn);

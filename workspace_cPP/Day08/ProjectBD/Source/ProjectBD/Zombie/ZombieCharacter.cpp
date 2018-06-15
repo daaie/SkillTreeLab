@@ -13,6 +13,9 @@
 #include "Basic/MyCharacter.h"
 #include "Components/WidgetComponent.h"
 #include "ZombieHPBarWidgetBase.h"
+#include "ConstructorHelpers.h"
+#include "Particles/ParticleSystem.h"
+
 // Sets default values
 AZombieCharacter::AZombieCharacter()
 {
@@ -61,6 +64,13 @@ AZombieCharacter::AZombieCharacter()
 	{
 		Widget->SetWidgetClass(WC_HPBar.Class);
 	}
+
+	static ConstructorHelpers::FObjectFinder<UParticleSystem> P_BulletEffect(TEXT("ParticleSystem'/Game/Effects/P_body_bullet_impact.P_body_bullet_impact'"));
+	if (P_BulletEffect.Succeeded())
+	{
+		BulletEffect = P_BulletEffect.Object;
+	}
+
 }
 
 // Called when the game starts or when spawned
@@ -155,6 +165,10 @@ float AZombieCharacter::TakeDamage(float Damage, FDamageEvent const & DamageEven
 		return 0;
 	}
 
+	CurrentState = EZombieState::HIT;
+	AZombieAIController* AIC = Cast<AZombieAIController>(GetController());
+	AIC->BBComponent->SetValueAsEnum(FName(TEXT("CurrentState")), (uint8)CurrentState);
+
 	if (DamageEvent.IsOfType(FRadialDamageEvent::ClassID))
 	{
 		FRadialDamageEvent* RadialDamageEvent = (FRadialDamageEvent*)(&DamageEvent);
@@ -162,6 +176,10 @@ float AZombieCharacter::TakeDamage(float Damage, FDamageEvent const & DamageEven
 	else if (DamageEvent.IsOfType(FPointDamageEvent::ClassID))
 	{
 		FPointDamageEvent* PointDamageEvent = (FPointDamageEvent*)(&DamageEvent);
+
+
+		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), BulletEffect, PointDamageEvent->HitInfo.ImpactPoint,
+			FRotator::ZeroRotator);
 
 		if (PointDamageEvent->HitInfo.BoneName.Compare(FName(TEXT("head"))) == 0)
 		{
@@ -198,7 +216,6 @@ float AZombieCharacter::TakeDamage(float Damage, FDamageEvent const & DamageEven
 	{
 		//DamageEvent
 	}
-
 	return 0.0f;
 }
 

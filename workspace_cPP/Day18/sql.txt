@@ -1,0 +1,70 @@
+select film.film_id, film.title
+from film
+join film_actor on film.film_id = film_actor.film_id
+join actor on film_actor.actor_id = actor.actor_id
+group by film.film_id;
+
+select count(film.film_id), film.title
+from film
+join film_actor on film.film_id = film_actor.film_id
+join actor on film_actor.actor_id = actor.actor_id
+limit 10;
+
+select film.film_id, film.title
+from film
+join film_actor on sakila.film.film_id = sakila.film_actor.film_id
+
+
+select count(film.film_id), film.title
+from film
+right join film_actor on film.film_id = film_actor.film_id
+right join actor on film_actor.actor_id = actor.actor_id
+
+inner == left 조인 -> 왼쪽기준 교집합
+outer == right 조인 -> 오른쪽 테이블 기준 합집합
+
+//----------------------------------------------------------------
+
+
+create database db character set utf8;
+drop database db ;
+
+
+create table user 
+( idx int not null auto_increment
+, id char(24) not null
+, password char(24) not null
+, level int not null default '1'
+, strength int not null default '0'
+, dex int not null default '0'
+, hp int not null default '0'
+, mana int not null default '0'
+, exp float not null default '0'
+, nickname char(40) null
+, gold int not null default '0'
+, job char(40) not null default '백수' 
+, PRIMARY KEY(idx) // 프라이 머리 키 중요..
+) ;
+
+insert into user (id , password,strength, dex, hp,mana,exp,nickname,gold,job) 
+values ('seung',	'1234',	'1',	'1',	'1',	'1000000',	'1',	'탱커',	'100',	'백수');
+insert into user (id , password,strength, dex, hp,mana,exp,nickname,gold,job) 
+values ('kimjs7784',	'q1w2e3',	'19',	'5',	'10000',	'3',	'7',	'어그로',	'10000',	'미필');
+insert into user (id , password,strength, dex, hp,mana,exp,nickname,gold,job) 
+values ('cha012',	'rkdsoddl',	'300',	'3',	'0',	'0',	'90000',	'보조탱커',	'9999999',	'드루이드');
+insert into user (id , password,strength, dex, hp,mana,exp,nickname,gold,job) 
+values ('nene',	'1018',	'999',	'9999999',	'9999999',	'9999999',	'9999999',	'에이스',	'0',	'전사');
+
+create table inventory(
+idx int not null auto_increment,
+user_id int not null,
+name char(40) not null,
+PRIMARY KEY(idx)
+);
+
+insert into inventory (user_idx, name) values ('1',	'안경');
+insert into inventory (user_idx, name) values ('3',	'망치');
+insert into inventory (user_idx, name) values ('4',	'담배');
+insert into inventory (user_idx, name) values ('4',	'라이터');
+insert into inventory (user_idx, name) values ('2',	'재떨이');
+insert into inventory (user_idx, name) values ('3',	'핸드폰');

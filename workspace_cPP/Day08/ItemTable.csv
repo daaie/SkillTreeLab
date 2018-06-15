@@ -1,0 +1,7 @@
+RowName,ItemIndex,ItemName,ItemType,ItemEquipSlot,ItemFloat01,ItemCount,ItemThumnail,ItemMesh
+10,10,에너지드링크,Comsume,NotUse,40,1,Texture2D'/Game/Items/Thumb/EnergyDrink.EnergyDrink',StaticMesh'/Game/Items/Energy/SM_MonsterDrink.SM_MonsterDrink'
+20,20,수류탄,Equip,WeaponRightHand,0,1,,
+30,30,구급상자,Comsume,NotUse,100,1,,
+40,40,권총,Equip,WeaponRightHand,0,1,,
+50,50,2배율스코프,Equip,Weapon,0,1,,
+60,60,SMG45,Equip,WeaponBack01,0,1,,

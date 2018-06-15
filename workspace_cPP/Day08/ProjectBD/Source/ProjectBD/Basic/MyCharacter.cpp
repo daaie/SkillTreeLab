@@ -20,6 +20,10 @@
 #include "Animation/AnimMontage.h"
 #include "Basic/BasicPC.h"
 #include "Components/PawnNoiseEmitterComponent.h"
+#include "MasterItem.h"
+#include "ItemTooltipWidgetBase.h"
+#include "Components/TextBlock.h"
+#include "ItemDataTableComponent.h"
 
 // Sets default values
 AMyCharacter::AMyCharacter()
@@ -91,6 +95,11 @@ AMyCharacter::AMyCharacter()
 		DeadAnimation = Anim_Dead.Object;
 	}
 
+	static ConstructorHelpers::FObjectFinder<UParticleSystem> P_BloodEffect(TEXT("ParticleSystem'/Game/Effects/P_body_bullet_impact.P_body_bullet_impact'"));
+	if (P_BloodEffect.Succeeded())
+	{
+		BloodEffect = P_BloodEffect.Object;
+	}
 	Tags.Add(FName(TEXT("Player")));
 
 	NoiseEmitter = CreateDefaultSubobject<UPawnNoiseEmitterComponent>(TEXT("NoiseEmitter"));
@@ -396,8 +405,15 @@ void AMyCharacter::OnShot()
 				UBulletDamageType::StaticClass()
 			);
 
-			UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), HitEffect, OutHit.Location, 
-				FRotator::ZeroRotator);
+			APawn* Pawn = Cast<APawn>(OutHit.GetActor());
+			if (Pawn)
+			{
+				UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), BloodEffect, OutHit.Location, FRotator::ZeroRotator);
+			}
+			else
+			{
+				UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), HitEffect, OutHit.Location, FRotator::ZeroRotator);
+			}
 
 			NoiseEmitter->MakeNoise(this, 1.0f, OutHit.Location);
 			NoiseEmitter->NoiseLifetime = 0.2f;
@@ -463,4 +479,55 @@ float AMyCharacter::TakeDamage(float DamageAmount, FDamageEvent const & DamageEv
 
 	Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
 	return DamageAmount;
+}
+
+void AMyCharacter::PickUpItemList(AMasterItem * Item)
+{
+	if (Item && !Item->IsPendingKill())
+	{
+		CanPickupList.Add(Item);
+	}
+
+	ViewItemTooltip();
+}
+
+void AMyCharacter::RemovePickUpItemList(AMasterItem * Item)
+{
+	if (Item)
+	{
+		CanPickupList.Remove(Item);
+	}
+
+	ViewItemTooltip();
+}
+
+void AMyCharacter::ViewItemTooltip()
+{
+	ABasicPC* PC = Cast<ABasicPC>(UGameplayStatics::GetPlayerController(GetWorld(), 0));
+	if (!PC)
+	{
+		return;
+	}
+
+	if (CanPickupList.Num() == 0)
+	{
+		UE_LOG(LogClass, Warning, TEXT("ViewToopTip"));
+
+		PC->ItemTooltip->SetVisibility(ESlateVisibility::Collapsed);
+		return;
+	}
+
+
+
+	//젤 가까운 아이템 가져오기
+	AMasterItem* ClosestItem = CanPickupList[0];
+	if (ClosestItem)
+	{
+		PC->ItemTooltip->ItemName->SetText(FText::FromString(ClosestItem->ItemDataTable->GetItemData(ClosestItem->ItemIndex).ItemName));
+		PC->ItemTooltip->SetVisibility(ESlateVisibility::Visible);
+	}
+	else
+	{
+		PC->ItemTooltip->SetVisibility(ESlateVisibility::Collapsed);
+	}
 }
