@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            글보기
+        </title>
+    </head>
+    <body>
+        
+        <fieldset style="width:40%;">
+            <table style ="width : 100%; box-sizing : border-box ;">
+                <tr>
+                    <td>제목</td>
+                    <td><input type="text" name="title" value="<%= data.title %>"></td>
+                </tr>
+            <tr>
+                <td>내용</td>
+                <td><textarea style ="width : 100%; box-sizing : border-box ; height:200px"><%= data.content %>
+                </textarea></td>
+            </tr>
+            </table>
+            <table>
+                <tr>
+                    <td><input type="button" value="돌아가기" onclick="location.href='/board'"></td>
+                </tr>
+            </table>
+        </fieldset>
+    </body>
+</html>

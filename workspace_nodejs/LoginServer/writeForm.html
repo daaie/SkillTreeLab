@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <title> 게시판 쓰기 </title>
+    </head>
+    <body>
+        <fieldset style = "width : 40%"> 
+            <legend> 글쓰기 </legend>
+            <form action="/board", method ="post" enctype="application/x-www-form-urlencoded">
+            <table style = "width:100%; box-sizing : boarder-box">
+                <tr>
+                    <td align="right" style = "width:10%; box-sizing : boarder-box">제목</td>
+                    <td><input type="text" name="title" style = "width:100%; box-sizing : boarder-box"></td>
+                    <!--id 값은 주로 css 에서 스타일 지정할때 씀-->
+                    <!--name은 데이터 읽을 떄 필요함-->
+                </tr>
+                <tr>
+                    <td align="right" style = "width:10%; box-sizing : boarder-box">내용</td>
+                    <td><textarea name="content" style = "width:100%; box-sizing : boarder-box ; height : 200px" ></textarea></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td><input type="submit" value="작성완료"></td>
+                    <td><input type="reset" value="작성취소"></td>
+                </tr>
+            </table>
+        </form>
+        </fieldset>
+    </body>
+</html>

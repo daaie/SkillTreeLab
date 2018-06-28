@@ -2,6 +2,7 @@
 var http = require ('http');
 var express = require ('express');
 var bodyParser = require('body-parser');
+var cookieParser = require("cookie-parser");
 
 function setRouter(app, handle){
     for(var ix in handle){
@@ -27,7 +28,7 @@ function serverStart(handle){
 
     // 미들웨어 설정.
     app.use(bodyParser.urlencoded({extended : false}));
-
+    app.use(cookieParser());
     // 라우터 설정.
     setRouter(app, handle);
 

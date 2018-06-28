@@ -31,14 +31,19 @@ var mysqlDB = (function(){
                     console.log('results.length');
                     console.log(results);
                     if(results.length>0){
-                        res.send("로그인 성공");
+                        // 쿠키저장
+                        res.cookie('userid',data.userid);
+                        // 리디렉션
+                        res.redirect('/board/writing');
+                        //res.send("로그인 성공");
                     } else {
                         res.send("로그인 실패");
                     }
                 }
             });
         }
-    }
+    };
+
 
     // 데이터 추가
     mysqlDB.insert = function(res,data){
@@ -62,7 +67,52 @@ var mysqlDB = (function(){
                 res.send("아이디 사용중.");
             }
         });
+    };
+    
+    mysqlDB.saveContent=function(req,res,data){
+        var query = "insert into board set ?";
+        client.query(query,data,function(error){
+            if(error){
+                res.send("글 저장 오류 : "+error);
+            } else {
+                console.log("글 저장 성공");
+                res.redirect('/board');
+            }
+        });
+    };
+
+    mysqlDB.showBoard = function(req,res,ejs,html){
+        var query="select * from board";
+        client.query(query,function(error,results){
+            if(error){
+                res.send("글 조회 오류:"+error);
+            } else{
+                if(results.length>0){
+                    res.send(ejs.render(html,{data:results}));
+                }else {
+                    res.type("text/html");
+                    res.send(html);
+                }
+            }
+        });
     }
+
+    mysqlDB.showContent = function(req,res,ejs,html){
+        var query="select * from board where id=?";
+        client.query(query,req.params.id,function(error,results){
+            if(error){
+                res.send(req.params.id+" 글 조회 오류:"+error);
+            } else{
+                if(results.length>0){
+                    res.send(ejs.render(html,{data:results[0]}));
+                }else {
+                    res.type("text/html");
+                    res.send(html);
+                }
+            }
+        });
+    }
+
     return mysqlDB;
 })();
 
