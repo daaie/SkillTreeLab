@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\stl\socket\day01\server\server\main.cpp(20): warning C4101: 'buffer': unreferenced local variable
+  Server.vcxproj -> C:\STL\Socket\Day01\Server\Debug\Server.exe
+  Server.vcxproj -> C:\STL\Socket\Day01\Server\Debug\Server.pdb (Full PDB)

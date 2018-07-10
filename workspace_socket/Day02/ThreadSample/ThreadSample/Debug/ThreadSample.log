@@ -1,0 +1,5 @@
+﻿  ThreadSample.cpp
+c:\stl\socket\day02\threadsample\threadsample\threadsample.cpp(29): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(1850): note: see declaration of 'inet_addr'
+  ThreadSample.vcxproj -> C:\STL\Socket\Day02\ThreadSample\Debug\ThreadSample.exe
+  ThreadSample.vcxproj -> C:\STL\Socket\Day02\ThreadSample\Debug\ThreadSample.pdb (Full PDB)

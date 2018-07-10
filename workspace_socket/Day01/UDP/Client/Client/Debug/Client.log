@@ -1,0 +1,6 @@
+﻿  main.cpp
+c:\users\stl\documents\skilltreelab\workspace_socket\day01\udp\client\client\main.cpp(34): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(1850): note: 'inet_addr' 선언을 참조하십시오.
+c:\users\stl\documents\skilltreelab\workspace_socket\day01\udp\client\client\main.cpp(16): warning C4101: 'clntAdrSz' :참조되지 않은 지역 변수입니다.
+  Client.vcxproj -> C:\Users\stl\Documents\SkillTreeLab\workspace_socket\Day01\UDP\Client\Debug\Client.exe
+  Client.vcxproj -> C:\Users\stl\Documents\SkillTreeLab\workspace_socket\Day01\UDP\Client\Debug\Client.pdb (Full PDB)

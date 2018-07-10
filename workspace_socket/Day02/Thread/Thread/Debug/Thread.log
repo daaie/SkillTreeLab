@@ -1,0 +1,5 @@
+﻿  main.cpp
+c:\users\stl\documents\skilltreelab\workspace_socket\day02\thread\thread\main.cpp(30): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(1850): note: 'inet_addr' 선언을 참조하십시오.
+  Thread.vcxproj -> C:\Users\stl\Documents\SkillTreeLab\workspace_socket\Day02\Thread\Debug\Thread.exe
+  Thread.vcxproj -> C:\Users\stl\Documents\SkillTreeLab\workspace_socket\Day02\Thread\Debug\Thread.pdb (Full PDB)

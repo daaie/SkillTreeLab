@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\users\stl\documents\skilltreelab\workspace_socket\day01\wsa\wsa\main.cpp(20): warning C4101: 'buffer' :참조되지 않은 지역 변수입니다.
+  WSA.vcxproj -> C:\Users\stl\Documents\SkillTreeLab\workspace_socket\Day01\WSA\Debug\WSA.exe
+  WSA.vcxproj -> C:\Users\stl\Documents\SkillTreeLab\workspace_socket\Day01\WSA\Debug\WSA.pdb (Partial PDB)
