@@ -37,5 +37,17 @@ public:
 
 	int LeftTime = 10;
 
+	UFUNCTION(Exec)
+		void Do0();
+
+	UFUNCTION(Exec)
+		void Do1(int Number);
+
+	UFUNCTION(Exec)
+		void Do2(int Number, float Number2);
+
+	UFUNCTION(Exec)
+		void Do3(int Number, float Number2, FString String);
+
 };
 

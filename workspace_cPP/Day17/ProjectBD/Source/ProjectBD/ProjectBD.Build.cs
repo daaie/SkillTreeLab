@@ -8,7 +8,10 @@ public class ProjectBD : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "AIModule", "GameplayTasks", "UMG" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "AIModule", "GameplayTasks", "UMG"
+        ,"Http"
+        ,"Json"
+        ,"JsonUtilities" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 

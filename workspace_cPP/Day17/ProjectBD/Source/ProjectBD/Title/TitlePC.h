@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
+#include "Http.h"
 #include "TitlePC.generated.h"
 
 /**
@@ -21,5 +22,12 @@ public:
 
 	class UUserWidget* LoadingWidget;
 	
+	class FHttpModule* HttpConnection;
+
+	void LoginHTTPGet(const FString& ID, const FString& Password);
+
+	void LoginHTTPPost(const FString& ID, const FString& Password);
 	
+	//UFUNCTION()
+	void OnRequestComplete(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bSuccess);
 };
